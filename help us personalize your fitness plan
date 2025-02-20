@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμα Γυμναστικής</title>
+    <style>
+        body {
+            background-color: #0000FF;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            background-color: rgba(0, 0, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #fff;
+            color: #0000FF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://automatesphere.app.n8n.cloud/webhook-test/test" method="POST">
+        <div class="form-group">
+            <label for="name">Ονοματεπώνυμο:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Διεύθυνση Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Ηλικία:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Φύλο:</label>
+            <select id="gender" name="gender">
+                <option value="Άνδρας">Άνδρας</option>
+                <option value="Γυναίκα">Γυναίκα</option>
+                <option value="Άλλο">Άλλο</option>
+                <option value="Προτιμώ να μην απαντήσω">Προτιμώ να μην απαντήσω</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fitness_goal">Στόχος Γυμναστικής:</label>
+            <select id="fitness_goal" name="fitness_goal">
+                <option value="Απώλεια βάρους">Απώλεια βάρους</option>
+                <option value="Μυϊκή ενδυνάμωση">Μυϊκή ενδυνάμωση</option>
+                <option value="Βελτίωση αντοχής">Βελτίωση αντοχής</option>
+                <option value="Τόνωση & σύσφιξη">Τόνωση & σύσφιξη</option>
+                <option value="Ευλυγισία & κινητικότητα">Ευλυγισία & κινητικότητα</option>
+                <option value="Άλλο">Άλλο (παρακαλώ προσδιορίστε)</option>
+            </select>
+            <input type="text" id="fitness_goal_other" name="fitness_goal_other" placeholder="Προσδιορίστε εδώ αν επιλέξατε 'Άλλο'">
+        </div>
+        <div class="form-group">
+            <label for="fitness_level">Επίπεδο Φυσικής Κατάστασης:</label>
+            <select id="fitness_level" name="fitness_level">
+                <option value="Αρχάριος">Αρχάριος</option>
+                <option value="Μεσαίο">Μεσαίο</option>
+                <option value="Προχωρημένος">Προχωρημένος</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="training_type">Προτιμώμενος Τύπος Προπόνησης:</label>
+            <select id="training_type" name="training_type">
+                <option value="Προπόνηση δύναμης">Προπόνηση δύναμης</option>
+                <option value="Καρδιο">Καρδιο</option>
+                <option value="Yoga/Pilates">Yoga/Pilates</option>
+                <option value="HIIT">HIIT</option>
+                <option value="Ασκήσεις με το βάρος του σώματος">Ασκήσεις με το βάρος του σώματος</option>
+                <option value="Μεικτό">Μεικτό (Δύναμη + Καρδιο)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="training_duration">Διάρκεια Προπόνησης:</label>
+            <select id="training_duration" name="training_duration">
+                <option value="15-30 λεπτά">15-30 λεπτά</option>
+                <option value="30-45 λεπτά">30-45 λεπτά</option>
+                <option value="45-60 λεπτά">45-60 λεπτά</option>
+                <option value="60+ λεπτά">60+ λεπτά</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="training_days">Ημέρες Προπόνησης ανά Εβδομάδα:</label>
+            <select id="training_days" name="training_days">
+                <option value="1-2 ημέρες">1-2 ημέρες</option>
+                <option value="3-4 ημέρες">3-4 ημέρες</option>
+                <option value="5+ ημέρες">5+ ημέρες</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="injuries">Τραυματισμοί ή Προβλήματα Υγείας:</label>
+            <select id="injuries" name="injuries">
+                <option value="Ναι">Ναι</option>
+                <option value="Όχι">Όχι</option>
+            </select>
+            <textarea id="injuries_details" name="injuries_details" placeholder="Αν ναι, εξηγήστε εδώ"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="equipment">Διαθέσιμος Εξοπλισμός:</label>
+            <select id="equipment" name="equipment">
+                <option value="Αλτήρες">Αλτήρες</option>
+                <option value="Λάστιχα αντίστασης">Λάστιχα αντίστασης</option>
+                <option value="Kettlebells">Kettlebells</option>
+                <option value="Μπάρα">Μπάρα</option>
+                <option value="Κανένα">Κανένα</option>
+                <option value="Άλλο">Άλλο (παρακαλώ προσδιορίστε)</option>
+            </select>
+            <input type="text" id="equipment_other" name="equipment_other" placeholder="Προσδιορίστε εδώ αν επιλέξατε 'Άλλο'">
+        </div>
+        <div class="form-group">
+            <label for="diet_restrictions">Διατροφικοί Περιορισμοί:</label>
+            <select id="diet_restrictions" name="diet_restrictions">
+                <option value="Ναι">Ναι</option>
+                <option value="Όχι">Όχι</option>
+            </select>
+            <textarea id="diet_restrictions_details" name="diet_restrictions_details" placeholder="Αν ναι, περιγράψτε εδώ"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="motivation">Επίπεδο Κινήτρου (1-10):</label>
+            <input type="number" id="motivation" name="motivation" min="1" max="10" required>
+        </div>
+        <div class="form-group">
+            <label for="daily_time">Διαθέσιμος Χρόνος για Προπόνηση (Ημερησίως):</label>
+            <select id="daily_time" name="daily_time">
+                <option value="Λιγότερο από 30 λεπτά">Λιγότερο από 30 λεπτά</option>
+                <option value="30-45 λεπτά">30-45 λεπτά</option>
+                <option value="45-60 λεπτά">45-60 λεπτά</option>
+                <option value="1+ ώρα">1+ ώρα</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="training_environment">Προτιμώμενο Περιβάλλον Προπόνησης:</label>
+            <select id="training_environment" name="training_environment">
+                <option value="Σπίτι">Σπίτι</option>
+                <option value="Γυμναστήριο">Γυμναστήριο</option>
+                <option value="Υπαίθριος χώρος">Υπαίθριος χώρος</option>
+                <option value="Συνδυασμός">Συνδυασμός (Σπίτι + Γυμναστήριο)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="challenges">Προκλήσεις στην Επίτευξη Στόχων:</label>
+            <select id="challenges" name="challenges">
+                <option value="Έλλειψη χρόνου">Έλλειψη χρόνου</option>
+                <option value="Έλλειψη κινήτρου">Έλλειψη κινήτρου</option>
+                <option value="Περιορισμένη πρόσβαση σε εξοπλισμό">Περιορισμένη πρόσβαση σε εξοπλισμό</option>
+                <option value="Δυσκολία στη διατήρηση ρουτίνας">Δυσκολία στη διατήρηση ρουτίνας</option>
+                <option value="Άλλο">Άλλο (παρακαλώ προσδιορίστε)</option>
+            </select>
+            <input type="text" id="challenges_other" name="challenges_other" placeholder="Προσδιορίστε εδώ αν επιλέξατε 'Άλλο'">
+        </div>
+        <div class="form-group">
+            <label for="notes">Επιπλέον Σημειώσεις ή Προτιμήσεις:</label>
+            <textarea id="notes" name="notes" placeholder="Προαιρετικό"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Υποβολή</button>
+        </div>
+    </form>
+</body>
+</html>
